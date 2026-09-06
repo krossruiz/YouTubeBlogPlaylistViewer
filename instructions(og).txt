@@ -1,0 +1,22 @@
+I want you to create a bulletin board type of program with HTML, CSS, and Javascript that will be used to display HTML coded blog posts about YouTube videos and YouTube video playlists. There's an embedded YouTube player that will display on the bulletin board that you can resize, resizing by dragging its sides and having a scroll wheel, and an HTML coded blog or notes section will accompany it on the page. Like the YouTube embedded player, you can have this post be adjustable in size, resizing it by dragging its sides and having a scroll wheel if it doesn't fit in the rectangular area. In the HTML of the blog post, you can have a special element that can link to another YouTube video and associated post, and an optional timestamp you'll skip to when you click it on the video its linking to (a prompt will be given if you want to stop playing the current video and play the linked video at the linked timestamp). Also, when you hover over this special element, it'll show a preview of the linked video and post, and a button that will take you to the linked video and post. You can make playlists of these YouTube video embed videos and posts, and they can be navigated on one bulletin board. Create a way for users to create playlists of videos and a way to edit and preview the html posts for each of the videos (post optional, if there's no post, show a display that there's no associated post for that video). Create two sample playlists and associated blog posts (just make something up from the title) from these the video links I'm using below. Have the posts in each playlist relate to each other. Somewhere in both of their posts, have them link to each other using the special element that you can hover over and move directly to another video. The video linked can be outside the sequence of videos in the playlist, and can also be linked to an entirely different playlist with different posts too. In the posts, the context of these links in the post's should relate one video or playlist to another. You should also have a special element that can link to a section in the text in another HTML blog post, in your current playlist or in another. 
+
+Cal Chuchesta - The New CALassic MIXTAPE REVIEW
+(18:00 duration)
+https://www.youtube.com/watch?v=QBm3upSqKvw
+
+Ghost in the Shell - Ghost City
+https://www.youtube.com/watch?v=WB-ik-Bpl0c&list=RDWB-ik-Bpl0c&start_radio=1
+(3:22 duration)
+
+Living AI: Lab Grown Brains From Stem Cells Controlling Agents to Create Simulation
+(3:31 duration)
+https://www.youtube.com/watch?v=6-tafvbkLvQ
+
+Terence McKenna - The Age of Confusion
+(24:58 duration)
+https://www.youtube.com/watch?v=jz98R5tOqb0
+
+Artificial Intelligence (Chat-GPT) and Buddhist Non-Self
+(21:13 duration)
+https://www.youtube.com/watch?v=hp0zpOYkqMI&t=804s
+

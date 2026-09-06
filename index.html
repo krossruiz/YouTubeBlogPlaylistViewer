@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Blog & Playlist Viewer</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">YouTube Blog & Playlist Viewer</div>
+    <div class="controls">
+      <label for="playlistSelect">Playlist:</label>
+      <select id="playlistSelect"></select>
+      <button id="newPlaylistBtn" title="Create a new playlist">+ Playlist</button>
+      <button id="addVideoBtn" title="Add a video to this playlist">+ Video</button>
+      <button id="toggleEditorBtn" title="Show/Hide post editor">Editor</button>
+      <label class="toggle">
+        <input type="checkbox" id="confirmToggle">
+        <span>Confirm on link</span>
+      </label>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="playlist-panel">
+        <h2 class="panel-title">Videos</h2>
+        <ul id="videoList" class="video-list"></ul>
+      </div>
+    </aside>
+
+    <section class="board">
+      <div id="playerContainer" class="panel resizable" data-min-width="300" data-min-height="200">
+        <div class="panel-titlebar">
+          <span>Player</span>
+          <span class="panel-size" id="playerSizeReadout"></span>
+        </div>
+        <div id="player"></div>
+        <div class="resizer resizer-top"></div>
+        <div class="resizer resizer-right"></div>
+        <div class="resizer resizer-bottom"></div>
+        <div class="resizer resizer-left"></div>
+      </div>
+
+      <div id="postContainer" class="panel resizable" data-min-width="300" data-min-height="200">
+        <div class="panel-titlebar">
+          <span>Post</span>
+          <span class="panel-size" id="postSizeReadout"></span>
+        </div>
+        <div id="postContent" class="post-content" aria-live="polite"></div>
+        <div class="no-post-msg" id="noPostMsg" hidden>No associated post for this video.</div>
+        <div class="resizer resizer-top"></div>
+        <div class="resizer resizer-right"></div>
+        <div class="resizer resizer-bottom"></div>
+        <div class="resizer resizer-left"></div>
+      </div>
+    </section>
+  </main>
+
+  <section id="editorPanel" class="editor" hidden>
+    <div class="editor-header">
+      <h2>Edit Post HTML</h2>
+      <div class="editor-actions">
+        <button id="savePostBtn">Save</button>
+        <button id="discardPostBtn">Discard</button>
+      </div>
+    </div>
+    <textarea id="postEditor" spellcheck="false"></textarea>
+    <div class="editor-help">
+      <details>
+        <summary>Special elements help</summary>
+        <div class="help-content">
+          <p>Use these custom elements inside your HTML post:</p>
+          <ul>
+            <li><code>&lt;yt-link data-video-id="VIDEO_ID" data-playlist-id="optionalPlaylistId" data-t="optionalSeconds"&gt;Link text&lt;/yt-link&gt;</code> — links to a YouTube video and optionally jumps to a timestamp.</li>
+            <li><code>&lt;post-link data-video-id="VIDEO_ID" data-playlist-id="optionalPlaylistId" data-fragment-id="sectionId"&gt;Link text&lt;/post-link&gt;</code> — links to a section in another post.</li>
+          </ul>
+          <p>Hovering shows a preview; clicking prompts to switch.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <div id="hoverPreview" class="hover-preview" hidden>
+    <div class="preview-card">
+      <img id="previewThumb" alt="Thumbnail">
+      <div class="preview-body">
+        <div class="preview-title" id="previewTitle"></div>
+        <div class="preview-meta" id="previewMeta" hidden></div>
+        <div class="preview-snippet" id="previewSnippet"></div>
+        <button id="previewGoBtn">Go</button>
+      </div>
+    </div>
+  </div>
+
+  <template id="videoListItemTemplate">
+    <li class="video-item">
+      <button class="video-entry" data-video-id="">
+        <img class="video-thumb" alt="">
+        <span class="video-title"></span>
+      </button>
+      <button class="edit-post-btn" title="Edit post">✎</button>
+    </li>
+  </template>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+

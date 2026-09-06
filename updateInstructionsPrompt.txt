@@ -1,0 +1,1 @@
+Update @instructions.txt with information about what you just implemented, specifically <description what the ai just implemented>, so that if you had to create the project from scratch, you could implement@instructions.txt and get the same functionality. Do not update parts of @instructions.txt that are not relevant to what I specified.
